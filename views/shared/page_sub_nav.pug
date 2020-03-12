@@ -1,0 +1,25 @@
+#sub-nav
+    .page-title
+        h1 Dashboard
+        span
+            a(href='#' title='Layout Options') Layout Options
+            |  &gt; 
+            a(href='#' title='Two column layout')
+                | Two
+                | column layout
+            |  &gt; This is a breadcrumb example
+    #top-buttons
+        a#dialog_link.btn.ui-state-default.ui-corner-all(href='#')
+            span.ui-icon.ui-icon-newwin
+            | Dialog Window
+
+        a#modal_confirmation_link.btn.ui-state-default.ui-corner-all(href='#')
+            span.ui-icon.ui-icon-grip-dotted-horizontal
+            | Modal Confirmation
+    #dialog(title='Dialog Title')
+        p
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    #modal_confirmation(title='An example modal title ?')
+        p
+            span.ui-icon.ui-icon-alert(style='float:left; margin:0 7px 20px 0;')
+            | Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

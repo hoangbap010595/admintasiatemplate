@@ -1,0 +1,25 @@
+#page-header
+    #page-header-wrapper
+        #top
+            a.logo(href='/' title='Admintasia 2.3') Admintasia 2.3
+            .welcome
+                span.note
+                    | Welcome, 
+                    a(href='#' title='Welcome, Horia Simon') Horia Simon
+                a.btn.ui-state-default.ui-corner-all(href='#')
+                    span.ui-icon.ui-icon-wrench
+                    | Settings
+                a.btn.ui-state-default.ui-corner-all(href='#')
+                    span.ui-icon.ui-icon-person
+                    | My account
+                a.btn.ui-state-default.ui-corner-all(href='#')
+                    span.ui-icon.ui-icon-power
+                    | Logout
+
+        include page_navigation.pug
+
+        #search-bar
+            form(method='post' action='http://www.google.com/')
+                input(type='text' name='q' value='Nhập nội dung tìm kiếm')
+
+include page_sub_nav.pug

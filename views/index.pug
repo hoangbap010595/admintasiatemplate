@@ -1,0 +1,63 @@
+extends shared/layout
+
+block content
+  .inner-page-title
+    h2 Welcome to Admintasia 2.3 Live Demonstration
+    span
+      | You can start building your next user interface with this powerful
+      | UI framework !
+  h1= title
+  p Welcome to #{title} hihi
+
+block sidebar
+  #sidebar
+    .sidebar-content
+      a#close_sidebar.btn.ui-state-default.full-link.ui-corner-all
+        span.ui-icon.ui-icon-circle-arrow-e
+        | Close Sidebar
+      a#open_sidebar.btn.tooltip.ui-state-default.full-link.icon-only.ui-corner-all(title='Open Sidebar')
+        span.ui-icon.ui-icon-circle-arrow-w
+      .hide_sidebar
+        .portlet.ui-widget.ui-widget-content.ui-helper-clearfix.ui-corner-all
+          .portlet-header.ui-widget-header
+            | Theme Switcher
+            span.ui-icon.ui-icon-circle-arrow-s
+          .portlet-content
+            ul#style-switcher.side-menu
+              li
+                a#black_rose.set_theme(href='#' title='Black Rose Theme') Black Rose Theme
+              li
+                a#gray_standard.set_theme(href='#' title='Gray Standard Theme') Gray Standard Theme
+              li
+                a#gray_lightness.set_theme(href='#' title='Gray Lightness Theme') Gray Lightness Theme
+              li
+                a#apple_pie.set_theme(href='#' title='Apple Pie Theme') Apple Pie Theme
+              li
+                a#blueberry.set_theme(href='#' title='Blueberry Theme') Blueberry Theme
+
+        .box.ui-widget.ui-widget-content.ui-corner-all
+          h3 Navigation
+          .content
+            a.btn.ui-state-default.full-link.ui-corner-all(href='#')
+              span.ui-icon.ui-icon-mail-closed
+              | Dummy link
+            a.btn.ui-state-default.full-link.ui-corner-all(href='#')
+              span.ui-icon.ui-icon-arrowreturnthick-1-n
+              | Dummy link
+            a.btn.ui-state-default.full-link.ui-corner-all(href='#')
+              span.ui-icon.ui-icon-scissors
+              | Dummy link
+            a.btn.ui-state-default.full-link.ui-corner-all(href='#')
+              span.ui-icon.ui-icon-signal-diag
+              | Dummy link
+            a.btn.ui-state-default.full-link.ui-corner-all(href='#')
+              span.ui-icon.ui-icon-alert
+              | With icon and also quite large link
+        .clear
+        .other-box.yellow-box.ui-corner-all.ui-corner-all
+          .cont.tooltip.ui-corner-all(title='Check out the sortable examples below !!')
+            h3 Sortable Section:
+            p
+              | Below you will find a sortable area. Enjoy! Also a tooltip example. You can add tooltips for any html elements.
+  .clear
+
