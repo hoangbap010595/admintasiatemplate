@@ -26,7 +26,13 @@ var auth = {
         if (user_session) {
             next();
         } else {
-            res.redirect('/auth');
+            //res.redirect('/auth');
+            res.render('auth/login', {
+                errors: [
+                    'Phiên làm việc đã kết thúc, vui lòng đăng nhập lại.'
+                ],
+                csrfToken: req.csrfToken()
+            });
             return;
         }
     }
