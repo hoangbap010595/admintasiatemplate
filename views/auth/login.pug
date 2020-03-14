@@ -6,19 +6,22 @@ block content
             li
                 a(href='#login') Đăng nhập hệ thống
         #login
-            .response-msg.success.ui-corner-all
-                span Success message
-                | Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-            form(action='', method='POST')
+            if errors
+                .response-msg.error.ui-corner-all
+                    span Xảy ra lỗi
+                    each error in errors
+                        | #{error}
+            form(action='' method='POST')
+                input(type="hidden" name="_csrf", value=csrfToken)
                 ul
-                li
-                    label.desc(for='email') Tên đăng nhập:
-                    div
-                    input#email.field.text.full(type='text' tabindex='1' maxlength='255' value='' name='username')
-                li
-                    label.desc(for='password') Mật khẩu:
-                    div
-                    input#password.field.text.full(type='password' tabindex='1' maxlength='255' value='' name='password')
-                li.buttons
-                    div
-                    button.ui-state-default.ui-corner-all.float-right.ui-button(type='submit') Đăng nhập
+                    li
+                        label.desc(for='email') Tên đăng nhập:
+                        div
+                        input#email.field.text.full(type='text', required, tabindex='1' maxlength='255', value=values ? values.username : '' name='username')
+                    li
+                        label.desc(for='password') Mật khẩu:
+                        div
+                        input#password.field.text.full(type='password', required, tabindex='1' maxlength='255', value=values ? values.password : '' name='password')
+                    li.buttons
+                        div
+                        button.ui-state-default.ui-corner-all.float-right.ui-button(type='submit') Đăng nhập

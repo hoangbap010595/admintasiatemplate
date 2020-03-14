@@ -139,7 +139,7 @@ $(document).ready(function () {
 				$('#theme_switcher').fadeOut('fast');
 			}, 1000);
 			setTimeout(function () {
-				$("link[title='style']").attr("href", "css/themes/" + theme_name + "/ui.css");
+				$("link[title='style']").attr("href", "/css/themes/" + theme_name + "/ui.css");
 			}, 500);
 			$.cookie('theme', theme_name);
 			$('a.set_theme').removeClass("active");
@@ -151,23 +151,23 @@ $(document).ready(function () {
 		$("a.set_theme[id=" + theme + "]").addClass("active");
 
 		if (theme == 'black_rose') {
-			$("link[title='style']").attr("href", "css/themes/black_rose/ui.css");
+			$("link[title='style']").attr("href", "/css/themes/black_rose/ui.css");
 		};
 
 		if (theme == 'gray_standard') {
-			$("link[title='style']").attr("href", "css/themes/gray_standard/ui.css");
+			$("link[title='style']").attr("href", "/css/themes/gray_standard/ui.css");
 		};
 
 		if (theme == 'gray_lightness') {
-			$("link[title='style']").attr("href", "css/themes/gray_lightness/ui.css");
+			$("link[title='style']").attr("href", "/css/themes/gray_lightness/ui.css");
 		};
 
 		if (theme == 'blueberry') {
-			$("link[title='style']").attr("href", "css/themes/blueberry/ui.css");
+			$("link[title='style']").attr("href", "/css/themes/blueberry/ui.css");
 		};
 
 		if (theme == 'apple_pie') {
-			$("link[title='style']").attr("href", "css/themes/apple_pie/ui.css");
+			$("link[title='style']").attr("href", "/css/themes/apple_pie/ui.css");
 		};
 	});
 
