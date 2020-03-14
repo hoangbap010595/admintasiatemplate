@@ -5,9 +5,12 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var session = require('express-session');
+var swaggerUi = require('swagger-ui-express');
+
 // Node customs
 var appConfig = require('./config');
 var authMiddleware = require('./middlewares/auth.middleware')
+var swaggerDocument = require('./swagger.json');
 
 // Define routes
 var indexRouter = require('./routes/index');
@@ -35,6 +38,9 @@ app.use(express.static(path.join(__dirname, appConfig.APP_FOLDER_PUBLIC)));
 // Authentication
 app.all('/api/*', authMiddleware.ApiAuthJWT);
 app.all('/admin/*', authMiddleware.AppAuth);
+
+// SwaggerUi Document
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use('/', indexRouter);
 app.use('/auth', authRouter);

@@ -5,7 +5,7 @@
             .welcome
                 span.note
                     | Welcome, 
-                    a(href='#' title='Welcome, Horia Simon') Horia Simon
+                    a(href='#' title=`Welcome, ${user.username}`) #{user.username}
                 a.btn.ui-state-default.ui-corner-all(href='#')
                     span.ui-icon.ui-icon-wrench
                     | Settings

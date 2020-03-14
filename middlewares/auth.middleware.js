@@ -24,15 +24,14 @@ var auth = {
     AppAuth: (req, res, next) => {
         const user_session = req.session.user_session;
         if (user_session) {
+            res.locals.user = user_session;
             next();
         } else {
-            //res.redirect('/auth');
-            res.render('auth/login', {
-                errors: [
-                    'Phiên làm việc đã kết thúc, vui lòng đăng nhập lại.'
-                ],
-                csrfToken: req.csrfToken()
-            });
+            var nextUrl = '/auth';
+            var returnUrl = req.url;
+            if (returnUrl)
+                nextUrl += '?nextUrl=' + returnUrl;
+            res.redirect(nextUrl);
             return;
         }
     }

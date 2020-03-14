@@ -10,7 +10,7 @@ var authController = require('../controllers/auth.controller')
 router.get('/', csrfProtection, authController.login);
 
 /* POST login page. */
-router.post('/', authController.postLogin);
+router.post('/', csrfProtection, authController.postLogin);
 
 /* GET logout page. */
 router.get('/logout', authController.logout);
