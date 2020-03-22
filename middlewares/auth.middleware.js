@@ -31,6 +31,8 @@ var auth = {
             var returnUrl = req.url;
             if (returnUrl)
                 nextUrl += '?nextUrl=' + returnUrl;
+
+            res.locals.user = {};
             res.redirect(nextUrl);
             return;
         }
